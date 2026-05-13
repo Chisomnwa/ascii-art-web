@@ -1,23 +1,26 @@
-package main
+package asciiartcode
 
 import (
+	"errors"
 	"fmt"
 	"os"
 	"strings"
 )
 
-func asciiArt(text, banner string) string {
-	// banner = "standard"
+func AsciiArt(text, banner string) (string, error) {
+	// ensure the correct banner is used
 	valid := banner == "standard" || banner == "thinkertoy" || banner == "shadow"
 	if !valid {
 		fmt.Println("wrong banner usage")
-		return ""
+		return "", errors.New("invalid Banner")
 	}
 
-	content, err := os.ReadFile(banner + ".txt")
+	// read the content of the banner file
+	filepath := banner + ".txt"
+	content, err := os.ReadFile(filepath)
 	if err != nil {
 		fmt.Println("error reading file:", err)
-		return ""
+		return "", errors.New("unable to read content")
 	}
 	data := strings.Split(string(content), "\n")
 
@@ -36,5 +39,5 @@ func asciiArt(text, banner string) string {
 			res += "\n"
 		}
 	}
-	return res
+	return res, nil
 }
