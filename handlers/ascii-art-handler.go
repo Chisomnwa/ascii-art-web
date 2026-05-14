@@ -40,6 +40,7 @@ func AsciiArtHandler(w http.ResponseWriter, r *http.Request) {
 
 	if inputText == "" {
 		http.Error(w, "404 Bad Request: input cannot be empty", http.StatusBadRequest)
+		fmt.Println("")
 		return
 	}
 

@@ -25,6 +25,11 @@ func AsciiArt(text, banner string) (string, error) {
 	data := strings.Split(string(content), "\n")
 
 	inputText := strings.ReplaceAll(text, "\\n", "\n")
+
+	if inputText == "" {
+		return "", nil 
+	}
+	
 	wordSlice := strings.Split(inputText, "\n")
 
 	var res string
