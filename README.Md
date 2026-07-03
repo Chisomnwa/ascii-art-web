@@ -16,7 +16,7 @@ This project extends the original [ascii-art](https://github.com/01-edu/public) 
 
 ## Authors
 
-- **Chukwunonso Namani** (@cnnamani)
+- **Chisom Nnamani** (@cnnamani)
 - **Samuel Akeju** (@sakeju)
 - **Oghenekevwe Ajayi** (ogajayi)
 
